@@ -28,11 +28,6 @@ export class UsersController {
     return this.usersService.store(body);
   }
 
-  @Get(':id')
-  show(@Param('id', new ParseUUIDPipe()) email: string) {
-    return this.usersService.findOneByEmail(email);
-  }
-
   @Put(':id')
   update(
     @Param('id', new ParseUUIDPipe()) id: string,
